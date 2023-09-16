@@ -25,6 +25,8 @@ git config
 
 > 提交是对索引的快照，分支是提交的一次引用，分支在Git中是非常廉价的，通常用来添加特性分支。
 > 每一次切换分支都会重新更新工作目录。
+
+
 ```bash
 
 git branch 
@@ -39,6 +41,7 @@ git switch # 切换分支
 
 git merge branch1 # 合并branch1到当前分支
 # 处理分支之间的差异，在merge之后需要再次add和commit进行提交
+
 ```
 
 ### 第三章
@@ -46,6 +49,7 @@ git merge branch1 # 合并branch1到当前分支
 >  多使用git log看看吧！
 
 ```bash
+
 git log # 打印git日志 
 --oneline # 简化提交信息到一行
 --all # 显示所有分支
@@ -57,6 +61,7 @@ git diff # 比较工作目录和索引的差异，按照行进行返回
 --word # 按照word的差异进行展示
 --cached or --staged # 将工作目录的文件同对象数据库比较
 git diff A B # 比较分支A B之间的差别
+
 ```
 
 ### 第四章
@@ -66,6 +71,7 @@ git diff A B # 比较分支A B之间的差别
 > HEAD^1 指向HEAD多个父提交中的第一个父提交
 
 ```bash
+
 git restore a.md # 撤销工作目录的变更
 --staged 
 # 如果在修改之后已经添加到索引，使用该命令并不撤销提交，将上一次提交的内容复制到索引里，然后再使用一次git restore将索引数据库复制到工作目录，达到撤销提交的目的。
@@ -80,6 +86,7 @@ git reset commit-ID/HEAD~1 # 删除提交
 --hard # 完全删除提交，具有破坏性
 
 git revert HEAD# 反转提交，创建一个新提交
+
 ```
 
 ### 第五章
@@ -108,7 +115,9 @@ git pull # 拉取github上的最新提交，将orgin/master和master指向同一
 # 推荐使用
 git fetch # 只更新远程分支到最新分支，但不影响本地提交  
 git pull = git pull + git merge
+
 ```
+
 [一个标准的github 工作流程](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
 
 ### 第六章
@@ -137,6 +146,7 @@ git bitsect start/good/bad # 用一个二分查找进行搜索提交
 
 # 使用别名
 git config --glocal alias.loga "log --all --oneline -- graph"
+
 ```
 
 ### 第七章
@@ -146,14 +156,15 @@ git config --glocal alias.loga "log --all --oneline -- graph"
 [git commit message的书写规范](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
 
 ```txt
+
 feat:新增的新特性
 fix:修改的bug
 docs:对文档的修改
 chore:对工具的修改
 test:对功能的测试
 分支命名的规范:名字/工号/内容:Bytedance/0112/feat-a
-```
 
+```
 
 ### appendix目录
 > 一切都没结束！
